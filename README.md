@@ -1,2 +1,2 @@
-# PatternsOnRust
-Example realization programming patterns
+# Algorithms on rust
+Example realization algorithms

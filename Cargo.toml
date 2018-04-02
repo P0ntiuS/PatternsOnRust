@@ -1,0 +1,8 @@
+[package]
+name = "algorithms_on_rust"
+version = "0.1.0"
+authors = ["p0ntius"]
+
+[dependencies]
+num="*"
+rand="*"
