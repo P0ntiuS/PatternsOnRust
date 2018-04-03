@@ -5,9 +5,9 @@ mod sorting;
 
 fn main() {
     let mut arr: Vec<i32> = Vec::new();
-	fill_arr_random_i32_by_range(&mut arr, 100, 0, 150);
+	fill_arr_random_i32_by_range(&mut arr, 100, -50, 50);
 	println!("Before sort: {:?} \n", arr);
-	sorting::bubble_sort(&mut arr);
+	sorting::insertion_sort(&mut arr);
     println!("After sort: {:?}", arr);
 }
 
