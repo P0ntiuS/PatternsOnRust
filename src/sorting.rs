@@ -13,10 +13,9 @@ pub fn bubble_sort<T: Num + PartialOrd + Clone>(arr: &mut Vec<T>) {
 		swaping = false;
 	    for i in 0 .. len - 1 {
 	        if arr[i] > arr[i+1] {
-	        	let first = arr[i].clone();
-	        	let second = arr[i+1].clone();
-	        	arr[i] = second;
-	        	arr[i+1] = first;
+	        	let temp = arr[i].clone();
+	        	arr[i] = arr[i+1].clone();
+	        	arr[i+1] = temp;
 	        	swaping = true;
 	        }
 	    }
@@ -51,9 +50,9 @@ pub fn selection_sort<T: Num + PartialOrd + Clone>(arr: &mut Vec<T>) {
 		    }
 	    }
 	    if min_ind != i {
-	    	let swap = arr[i].clone();
+	    	let temp = arr[i].clone();
 	    	arr[i] = arr[min_ind].clone();
-	    	arr[min_ind] = swap;
+	    	arr[min_ind] = temp;
 	    }    
     }
 }
