@@ -5,11 +5,10 @@ use self::num::Num;
 use std::cmp::PartialOrd;
 use std::clone::Clone;
 /// Bubble sort
-#[allow(unused_assignments, dead_code)]
+#[allow(dead_code)]
 pub fn bubble_sort<T: Num + PartialOrd + Clone>(arr: &mut Vec<T>) {
-	let mut swaping = true;
 	let len = arr.len();
-	swaping = !(len == 0);
+	let mut swaping = !(len == 0);
 	while swaping {
 		swaping = false;
 	    for i in 0 .. len - 1 {
@@ -24,15 +23,14 @@ pub fn bubble_sort<T: Num + PartialOrd + Clone>(arr: &mut Vec<T>) {
 	}
 }
 /// Insertion sort
-#[allow(unused_assignments, dead_code)]
+#[allow(dead_code)]
 pub fn insertion_sort<T: Num + PartialOrd + Clone>(arr: &mut Vec<T>) {
 	 // Указатель в каком месте массива мы сейчас находимся
-	let mut pos = 0;
 	let len = arr.len();
 	// Проход по массиву по указателю 
 	for i in 1 .. len {
 	   let insert_val = arr[i].clone();
-	   pos = i;
+	   let mut pos = i;
 	   while pos > 0 && arr[pos-1] > insert_val {
 	       arr[pos] = arr[pos-1].clone();
 	       pos -= 1;
@@ -40,4 +38,22 @@ pub fn insertion_sort<T: Num + PartialOrd + Clone>(arr: &mut Vec<T>) {
 	   
 	   arr[pos] = insert_val;
 	}   
+}
+/// Selection sort
+#[allow(dead_code)]
+pub fn selection_sort<T: Num + PartialOrd + Clone>(arr: &mut Vec<T>) {
+    let len = arr.len();
+    for i in 0 .. len - 1 {
+    	let mut min_ind = i;
+	    for j in i + 1 .. len {
+		    if arr[min_ind] > arr[j] {
+		        min_ind = j;
+		    }
+	    }
+	    if min_ind != i {
+	    	let swap = arr[i].clone();
+	    	arr[i] = arr[min_ind].clone();
+	    	arr[min_ind] = swap;
+	    }    
+    }
 }
