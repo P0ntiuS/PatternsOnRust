@@ -7,15 +7,15 @@ fn main() {
     let mut arr: Vec<i32> = Vec::new();
     fill_arr_random_i32_by_range(&mut arr, 20, 0, 50);
 	
-	println!("Before sort: {:?} \n", arr);
-	sorting::selection_sort(&mut arr);
+    println!("Before sort: {:?} \n", arr);
+    sorting::selection_sort(&mut arr);
     println!("After sort: {:?}", arr);
 }
 
 fn fill_arr_random_i32_by_range(arr: &mut Vec<i32>, len_arr: i32, min: i32, max:i32) {
-	let mut rng = thread_rng();
+    let mut rng = thread_rng();
 
-	for _ in 0 .. len_arr {
-	    arr.push(rng.gen_range(min, max));
-	}
+    for _ in 0 .. len_arr {
+        arr.push(rng.gen_range(min, max));
+    }
 }
