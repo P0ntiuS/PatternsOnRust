@@ -7,7 +7,7 @@ use std::clone::Clone;
 /// Bubble sort
 #[allow(dead_code)]
 pub fn bubble_sort<T: Num + PartialOrd + Clone>(arr: &mut Vec<T>) {
-	let len = arr.len();
+    let len = arr.len();
 	let mut swaping = !(len == 0);
 	while swaping {
 		swaping = false;
